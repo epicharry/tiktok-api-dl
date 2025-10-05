@@ -1,23 +1,24 @@
-import chalk from "chalk"
+import chalk from 'chalk'
 
 export class Logger {
-  static success(message: string): void {
-    console.log(chalk.green("✓  " + message))
+  static success(message: string, ...args: any[]) {
+    console.log(chalk.green('✓'), message, ...args)
   }
-
-  static error(message: string): void {
-    console.error(chalk.red("✗  " + message))
+  static error(message: string, ...args: any[]) {
+    console.log(chalk.red('✗'), message, ...args)
   }
-
-  static info(message: string): void {
-    console.log(chalk.blue("ℹ  " + message))
+  static info(message: string, ...args: any[]) {
+    console.log(chalk.blue('ℹ'), message, ...args)
   }
-
-  static warning(message: string): void {
-    console.log(chalk.yellow("⚠  " + message))
+  static warn(message: string, ...args: any[]) {
+    console.log(chalk.yellow('⚠'), message, ...args)
   }
-
-  static result(message: string, color = chalk.cyan): void {
-    console.log(color(message))
+  static warning(message: string, ...args: any[]) {
+    console.log(chalk.yellow('⚠'), message, ...args)
+  }
+  static result(message: string, ...args: any[]) {
+    console.log(message, ...args)
   }
 }
+
+export const logger = Logger

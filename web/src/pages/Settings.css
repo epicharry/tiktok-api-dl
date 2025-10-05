@@ -1,0 +1,124 @@
+.settings-page {
+  max-width: 800px;
+  padding: 24px 16px;
+}
+
+.settings-page h1 {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+.settings-section {
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.settings-section h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.section-description {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row .label {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.info-row .value {
+  color: var(--text-primary);
+}
+
+.cookie-instructions {
+  background: var(--bg-tertiary);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.cookie-instructions h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.cookie-instructions ol {
+  margin-left: 20px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.cookie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cookie-input {
+  font-family: monospace;
+  font-size: 12px;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.features-list {
+  margin-left: 24px;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+.note {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .settings-page h1 {
+    font-size: 24px;
+  }
+
+  .settings-section {
+    padding: 24px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cookie-actions {
+    flex-direction: column;
+  }
+
+  .cookie-actions .btn {
+    width: 100%;
+  }
+}
