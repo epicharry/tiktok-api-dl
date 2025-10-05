@@ -1,4 +1,6 @@
-import TiktokAPI from '../../../src/index'
+// Browser-compatible TikTok API service
+// NOTE: This requires backend API integration in production
+// The TikTok API cannot run directly in the browser due to Node.js dependencies
 
 export interface DownloadOptions {
   version?: 'v1' | 'v2' | 'v3'
@@ -13,56 +15,69 @@ export interface SearchOptions {
   proxy?: string
 }
 
+const API_ERROR = {
+  status: 'error' as const,
+  message: 'This feature requires a backend server. The TikTok API uses Node.js modules that cannot run in the browser. Please set up a backend API server to use this feature.',
+}
+
 export const tiktokService = {
   downloadVideo: async (url: string, options?: DownloadOptions) => {
-    return await TiktokAPI.Downloader(url, {
-      version: options?.version || 'v1',
-      proxy: options?.proxy,
-      showOriginalResponse: options?.showOriginalResponse,
-    })
+    console.warn('Download video called - requires backend API')
+    return API_ERROR
   },
 
   search: async (keyword: string, options: SearchOptions) => {
-    return await TiktokAPI.Search(keyword, options)
+    console.warn('Search called - requires backend API')
+    return API_ERROR
   },
 
   stalkUser: async (username: string, proxy?: string) => {
-    return await TiktokAPI.StalkUser(username, { proxy })
+    console.warn('Stalk user called - requires backend API')
+    return API_ERROR
   },
 
   getVideoComments: async (url: string, commentLimit?: number, proxy?: string) => {
-    return await TiktokAPI.GetVideoComments(url, { commentLimit, proxy })
+    console.warn('Get comments called - requires backend API')
+    return API_ERROR
   },
 
   getUserPosts: async (username: string, postLimit?: number, proxy?: string) => {
-    return await TiktokAPI.GetUserPosts(username, { postLimit, proxy })
+    console.warn('Get user posts called - requires backend API')
+    return API_ERROR
   },
 
   getUserReposts: async (username: string, postLimit?: number, proxy?: string) => {
-    return await TiktokAPI.GetUserReposts(username, { postLimit, proxy })
+    console.warn('Get user reposts called - requires backend API')
+    return API_ERROR
   },
 
   getUserLiked: async (username: string, cookie: string, postLimit?: number, proxy?: string) => {
-    return await TiktokAPI.GetUserLiked(username, { cookie, postLimit, proxy })
+    console.warn('Get user liked called - requires backend API')
+    return API_ERROR
   },
 
   getCollection: async (collectionIdOrUrl: string, page?: number, count?: number, proxy?: string) => {
-    return await TiktokAPI.Collection(collectionIdOrUrl, { page, count, proxy })
+    console.warn('Get collection called - requires backend API')
+    return API_ERROR
   },
 
   getPlaylist: async (playlistIdOrUrl: string, page?: number, count?: number, proxy?: string) => {
-    return await TiktokAPI.Playlist(playlistIdOrUrl, { page, count, proxy })
+    console.warn('Get playlist called - requires backend API')
+    return API_ERROR
   },
 
   getTrending: async (proxy?: string) => {
-    return await TiktokAPI.Trending({ proxy })
+    console.warn('Get trending called - requires backend API')
+    return API_ERROR
   },
 
   getTrendingCreators: async (proxy?: string) => {
-    return await TiktokAPI.TrendingCreators({ proxy })
+    console.warn('Get trending creators called - requires backend API')
+    return API_ERROR
   },
 
   getVideosByMusicId: async (musicId: string, page?: number, count?: number, proxy?: string) => {
-    return await TiktokAPI.GetVideosByMusicId(musicId, { page, count, proxy })
+    console.warn('Get videos by music called - requires backend API')
+    return API_ERROR
   },
 }
