@@ -9,3 +9,4 @@ bun.lockb
 tsconfig.tsbuildinfo
 cookies.json
 dist
+.env
